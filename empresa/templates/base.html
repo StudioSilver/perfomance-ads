@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Ionicons/css/ionicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfect-scrollbar/css/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-switchbutton/jquery.switchButton.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rickshaw/rickshaw.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bracket.css' %}">
+
+</head>
+<body>
+    <!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-logo"><a href="/"><span>[</span>Studio Silver<span>]</span></a></div>
+    <div class="br-sideleft overflow-y-auto">
+      <label class="sidebar-label pd-x-15 mg-t-20">Navegação</label>
+      <div class="br-sideleft-menu">
+         <a href="#" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Empresas</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="nav-item"><a href="adicionar-empresa/" class="nav-link">Cadastrar Empresa</a></li>
+          </ul>
+        </a><!-- br-menu-link -->
+        <a href="telaCadastroEmpresa.php" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon icon ion-ios-folder tx-22"></i>
+            <span class="menu-item-label">Landing Page</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <a href="#" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon icon ion-ios-gear tx-22"></i>
+            <span class="menu-item-label">Minha Conta</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+            <ul class="br-menu-sub nav flex-column">
+              <li class="nav-item"><a href="page-profile.php" class="nav-link">Meu Perfil</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Falar com Suporte</a></li>
+            </ul>
+        </a><!-- br-menu-link -->
+      </div><!-- br-sideleft-menu -->
+
+
+      <br>
+    </div><!-- br-sideleft -->
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="br-header">
+      <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="input-group hidden-xs-down wd-170 transition">
+        </div><!-- input-group -->
+      </div><!-- br-header-left -->
+      <div class="br-header-right">
+        <nav class="nav">
+          <div class="dropdown">
+            <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name hidden-md-down"></span>
+              <img src="http://via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
+              <span class="square-10 bg-success"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href="page-profile.php"><i class="icon ion-ios-person"></i>Editar Perfil</a></li>
+                <li><a href="telaRedifinirSenha.php"><i class="icon ion-ios-gear"></i> Redefinir Senha</a></li>
+                <li><a href=""><i class="icon ion-ios-download"></i> Downloads</a></li>
+                <li><a href=""><i class="icon ion-ios-star"></i> Planos</a></li>
+                <li><a href=""><i class="icon ion-ios-folder"></i> Landing Pages</a></li>
+                <li><a href="telaSair.php"><i class="icon ion-power"></i> Sair</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+      </div><!-- br-header-right -->
+    </div><!-- br-header -->
+    <!-- ########## END: HEAD PANEL ########## -->
+
+    <!-- ########## START: MAIN PANEL ########## -->
+    
+      {% block content %}
+      {% endblock %}
+    
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery/jquery.js' %}"></script>
+    <script src="{% static 'css/perfect-scrollbar/js/perfect-scrollbar.jquery.js' %}"></script>
+    <script src="{% static 'js/moment/moment.js' %}"></script>
+    <script src="{% static 'js/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'css/jquery-switchbutton/jquery.switchButton.js' %}"></script>
+    <script src="{% static 'js/peity/jquery.peity.js' %}"></script>
+    <script src="{% static 'js/jquery.sparkline.bower/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'js/d3/d3.js' %}"></script>
+    <script src="{% static 'css/rickshaw/rickshaw.min.js' %}"></script>
+    <script src="{% static 'js/bracket.js' %}"></script>
+    <script src="{% static 'js/ResizeSensor.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    
+    <script>
+        $(function(){
+          'use strict'
+  
+          // FOR DEMO ONLY
+          // menu collapsed by default during first page load or refresh with screen
+          // having a size between 992px and 1299px. This is intended on this page only
+          // for better viewing of widgets demo.
+          $(window).resize(function(){
+            minimizeMenu();
+          });
+  
+          minimizeMenu();
+  
+          function minimizeMenu() {
+            if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+              // show only the icons and hide left menu label by default
+              $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+              $('body').addClass('collapsed-menu');
+              $('.show-sub + .br-menu-sub').slideUp();
+            } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+              $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+              $('body').removeClass('collapsed-menu');
+              $('.show-sub + .br-menu-sub').slideDown();
+            }
+          }
+        });
+      </script>
+
+    
+    
+</body>
+</html>

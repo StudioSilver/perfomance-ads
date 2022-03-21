@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Editar Empresa - '{{ core.nomeEmpresa }}'{% endblock %}
 
 {% block content %}
@@ -13,7 +15,7 @@
 <div class="br-pagebody mg-t-0 pd-x-50">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" class="btn btn-success" value="Editar Empresa">
     </form>
  </div><!-- br-pagebody-->

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
+
 {% block title %}Adicione Empresa - Perfomance ADS{% endblock %}
 
 {% block content %}
@@ -13,7 +16,7 @@
 <div class="br-pagebody mg-t-0 pd-x-50">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" class="btn btn-success" value="Criar Empresa">
     </form>
  </div><!-- br-pagebody-->

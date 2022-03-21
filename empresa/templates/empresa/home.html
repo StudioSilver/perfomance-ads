@@ -6,16 +6,18 @@
 
 <div class="br-mainpanel list-div">
     <div class="pd-50">
-      <h4 class="tx-gray-800 mg-b-10">Tela de Cadastro - Perfomance ADS</h4>
+      <h4 class="tx-gray-800 mg-b-10 teste">Tela de Cadastro - Perfomance ADS</h4>
       <p class="mg-b-15">Confira toda as empresas cadastradas em seu nome</p>
       <a id="add-empresa" href="adicionar-empresa/">
         <div class="col-2 add-div">
-            <i class="fa fa-plus"></i> Adicionar Empresa
+           <span><i class="fa fa-plus"></i> Adicionar Empresa</span>
         </div>
      </a>
       <div class="col-9 search-div">
-        <input class="form-control" type="text" id="search" placeholder="Digite o nome da sua empresa">
-        <i class="fa fa-search"></i>
+          <form method="GET" id="search-form">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da sua empresa" value="{{ request.GET.search }}">
+            <i class="fa fa-search" id="search-btn"></i>
+          </form>
     </div>
     {% if messages %}
     <ul class="messages">
@@ -42,9 +44,11 @@
                 <a href="?page={{ empresa.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
             {% endif %}
 
+            {% if empresa.paginator.num_pages %}
             <span class="current">
               {{ empresa.number }} de {{ empresa.paginator.num_pages }}
             </span>
+            {% endif %}
 
             {% if empresa.has_next %}
                 <a href="?page={{ empresa.next_page_number }}"><i class="fa fa-angle-right"></i></a>

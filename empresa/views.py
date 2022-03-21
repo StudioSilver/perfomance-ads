@@ -7,12 +7,21 @@ from django.contrib import messages
 from .models import Empresa
 
 def homePrincipal(request):
-    empresas_lista = Empresa.objects.all()
-    
-    paginator = Paginator(empresas_lista, 6)
-    page = request.GET.get('page')
 
-    empresas = paginator.get_page(page)
+    search = request.GET.get('search')
+
+    if search:
+
+        empresas = Empresa.objects.filter(nomeEmpresa__icontains=search)
+
+    else :
+
+        empresas_lista = Empresa.objects.all()
+        
+        paginator = Paginator(empresas_lista, 6)
+        page = request.GET.get('page')
+
+        empresas = paginator.get_page(page)
 
     return render(request, 'empresa/home.html', {'empresa': empresas})
 
